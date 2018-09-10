@@ -33,7 +33,7 @@ class MySkillsTest(MycroftSkill):
 
     @intent_handler(IntentBuilder("").require("Query".require("Play")))
     def handle_query_play_intent(self, message):
-        self.speak_dialog("what.should.we.play.dialog")
+        self.speak_dialog("what.should.we.play")
 
 
 # The "create_skill()" method is used to create an instance of the skill.
