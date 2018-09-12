@@ -9,15 +9,15 @@ from mycroft.skills.core import MycroftSkill, intent_handler
 from mycroft.util.log import LOG
 
 #Error logger
-LOGGER = getLogger(__name__)
+#LOGGER = getLogger(__name__)
 
 # Each skill is contained within its own class, which inherits base methods
 # from the MycroftSkill class.  You extend this class as shown below.
-class MySkillsTest(MycroftSkill):
+class WantToPlay(MycroftSkill):
 
     # The constructor of the skill, which calls MycroftSkill's constructor
     def __init__(self):
-        super(TemplateSkill, self).__init__(name="MySkillsTest")
+        super(TemplateSkill, self).__init__(name="WantToPlay")
 
     # The "stop" method defines what Mycroft does when told to stop during
     # the skill's execution. In this case, since the skill's functionality
@@ -28,7 +28,7 @@ class MySkillsTest(MycroftSkill):
     # def stop(self):
     #    return False
 
-    @intent_handler(IntentBuilder("").require("Query".require("Play")))
+    @intent_handler(IntentBuilder("").require("Query").require("Play"))
     def handle_query_play_intent(self, message):
         self.speak_dialog("what.should.we.play")
 
@@ -36,4 +36,4 @@ class MySkillsTest(MycroftSkill):
 # The "create_skill()" method is used to create an instance of the skill.
 # Note that it's outside the class itself.
 def create_skill():
-    return MySkillsTest()
+    return WantToPlay()
