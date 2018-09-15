@@ -13,11 +13,11 @@ from mycroft.util.log import LOG
 
 # Each skill is contained within its own class, which inherits base methods
 # from the MycroftSkill class.  You extend this class as shown below.
-class WantToPlay(MycroftSkill):
+class WantToPlaySkill(MycroftSkill):
 
     # The constructor of the skill, which calls MycroftSkill's constructor
     def __init__(self):
-        super(TemplateSkill, self).__init__(name="WantToPlay")
+        super(WantToPlaySkill, self).__init__(name="WantToPlaySkill")
 
     # The "stop" method defines what Mycroft does when told to stop during
     # the skill's execution. In this case, since the skill's functionality
@@ -36,4 +36,4 @@ class WantToPlay(MycroftSkill):
 # The "create_skill()" method is used to create an instance of the skill.
 # Note that it's outside the class itself.
 def create_skill():
-    return WantToPlay()
+    return WantToPlaySkill()
